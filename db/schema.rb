@@ -10,9 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_11_01_014635) do
+ActiveRecord::Schema[7.0].define(version: 2024_11_01_191830) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cameras", force: :cascade do |t|
+    t.string "brand", null: false
+    t.string "model", null: false
+    t.integer "year", null: false
+    t.string "version"
+    t.string "camera_type", null: false
+    t.float "price", null: false
+    t.integer "sku", null: false
+    t.boolean "sold", null: false
+    t.string "format", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["brand"], name: "index_cameras_on_brand"
+    t.index ["model"], name: "index_cameras_on_model"
+    t.index ["sku"], name: "index_cameras_on_sku", unique: true
+    t.index ["version"], name: "index_cameras_on_version"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false

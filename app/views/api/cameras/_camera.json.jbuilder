@@ -1,0 +1,1 @@
+json.extract! camera, :id, :brand, :brand, :model, :year, :camera_type, :price, :sku, :format

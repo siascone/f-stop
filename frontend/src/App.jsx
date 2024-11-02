@@ -4,7 +4,9 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import LoginForm from "./components/session/LoginForm";
 import SignupForm from './components/session/SignupForm';
 import Navigation from './components/navigation/Navigation';
-
+import * as sessionActions from './store/sessionsReducer';
+import CameraIndex from './components/camera/CameraIndex';
+import CameraPage from './components/camera/CameraPage';
 
 function Layout() {
     const dispatch = useDispatch();
@@ -39,6 +41,14 @@ const router = createBrowserRouter([
             {
                 path: '/signup',
                 element: <SignupForm />
+            },
+            {
+                path: '/cameras',
+                element: <CameraIndex />
+            },
+            {
+                path: '/cameras/:cameraId',
+                element: <CameraPage />
             }
         ]
     }

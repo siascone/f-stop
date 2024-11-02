@@ -28,6 +28,7 @@ function Navigation() {
         <ul>
             <li>
                 <NavLink to='/'>Home</NavLink>
+                <NavLink to='/cameras'>Camera Inventory</NavLink>
             </li>
             {sessionLinks}
         </ul>
